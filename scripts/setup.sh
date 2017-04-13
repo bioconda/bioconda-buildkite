@@ -27,8 +27,14 @@ done
 
 ####### Setup conda ##############
 
-curl -O https://repo.continuum.io/miniconda/Miniconda3-$MINICONDA_VER-$OS-x86_64.sh
-bash Miniconda3-$MINICONDA_VER-$OS-x86_64.sh -b -p `pwd`/.miniconda
+OLD_MINICONDA_VER=$(`cat .miniconda/version.txt 2> /dev/null` || echo "")
+
+if [[ $OLD_MINICONDA_VER = $MINICONDA_VER ]]
+then
+    curl -O https://repo.continuum.io/miniconda/Miniconda3-$MINICONDA_VER-$OS-x86_64.sh
+    bash Miniconda3-$MINICONDA_VER-$OS-x86_64.sh -b -p `pwd`/.miniconda
+    echo $MINICONDA_VER > .miniconda/version.txt
+fi
 export PATH=.miniconda/bin:$PATH
 
 ./simulate-travis.py --set-channel-order
