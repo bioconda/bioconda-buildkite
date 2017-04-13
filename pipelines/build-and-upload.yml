@@ -1,0 +1,8 @@
+steps:
+  - label: Build and test missing recipes
+    command: ".buildkite/scripts/build.sh"
+    env:
+      BIOCONDA_UTILS_TAG: "master"
+      MINICONDA_VER: "4.2.12"  # the last one with Python 3.5
+    agents:
+      queue: linux64

@@ -1,0 +1,18 @@
+steps:
+  - label: Lint updated recipes
+    command: ".buildkite/scripts/lint.sh"
+    env:
+      BIOCONDA_UTILS_TAG: "master"
+      MINICONDA_VER: "4.2.12"  # the last one with Python 3.5
+    agents:
+      queue: linux64
+
+  - wait
+
+  - label: Build and test updated recipes
+    command: ".buildkite/scripts/build.sh"
+    env:
+      BIOCONDA_UTILS_TAG: "master"
+      MINICONDA_VER: "4.2.12"  # the last one with Python 3.5
+    agents:
+      queue: linux64
