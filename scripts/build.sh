@@ -8,7 +8,7 @@ IFS=$'\n\t'
 
 MULLED="--mulled-test"
 
-if [[ $(./buildkite/scripts/env_matrix_update.sh) = "true" ]]
+if [[ $(.buildkite/scripts/env_matrix_update.sh) = "true" ]]
 then
     RANGE=""
 else

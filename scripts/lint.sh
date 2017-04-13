@@ -7,7 +7,7 @@ IFS=$'\n\t'
 
 ####### lint recipes #############
 
-if [[ $(./buildkite/scripts/env_matrix_update.sh) = "true" ]]
+if [[ $(.buildkite/scripts/env_matrix_update.sh) = "true" ]]
 then
     # do not lint
     exit 0
