@@ -2,8 +2,7 @@
 
 if [[ -z ${MINICONDA_VER+x} ]]
 then
-    # exit if MINICONDA_VER is not set aka we are not in the pipeline yet.
-    exit 0
+    # do nothing if MINICONDA_VER is not set aka we are not in the pipeline yet.
+else
+    .buildkite/scripts/setup.sh
 fi
-
-.buildkite/scripts/setup.sh
