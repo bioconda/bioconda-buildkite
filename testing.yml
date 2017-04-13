@@ -1,4 +1,6 @@
 steps:
   - label: Setup conda
     command: "scripts/setup.sh"
+    agents:
+      queue: linux64
   - wait
