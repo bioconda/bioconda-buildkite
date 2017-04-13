@@ -29,7 +29,7 @@ done
 
 OLD_MINICONDA_VER=$(`cat .miniconda/version.txt 2> /dev/null` || echo "")
 
-if [[ "$OLD_MINICONDA_VER" -ne "$MINICONDA_VER" ]]
+if [[ "$OLD_MINICONDA_VER" != "$MINICONDA_VER" ]]
 then
     curl -O https://repo.continuum.io/miniconda/Miniconda3-$MINICONDA_VER-$OS-x86_64.sh
     bash Miniconda3-$MINICONDA_VER-$OS-x86_64.sh -b -p `pwd`/.miniconda
