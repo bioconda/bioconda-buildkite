@@ -1,6 +1,7 @@
 steps:
   - label: Test all recipes
     command: ".buildkite/scripts/test-all.sh"
+    artifact_paths: "test.log"
     env:
       BIOCONDA_UTILS_TAG: "master"
       MINICONDA_VER: "4.2.12"  # the last one with Python 3.5
