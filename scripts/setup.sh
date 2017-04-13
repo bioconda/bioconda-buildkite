@@ -1,6 +1,10 @@
 #!/bin/bash
 
+####### activate strict mode #####
+set -euo pipefail
+IFS=$'\n\t'
 
+####### determine OS #############
 OS=Linux
 if [[ $(uname -s) = "Darwin" ]]
 then
@@ -24,7 +28,7 @@ done
 ####### Setup conda ##############
 
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-$OS-x86_64.sh
-bash Miniconda3-latest-$tag-x86_64.sh -b -p `pwd`/.miniconda
+bash Miniconda3-latest-$OS-x86_64.sh -b -p `pwd`/.miniconda
 export PATH=.miniconda/bin:$PATH
 
 ./simulate-travis.py --set-channel-order
