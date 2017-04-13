@@ -34,6 +34,7 @@ echo "previous Miniconda version: $OLD_MINICONDA_VER"
 if [[ "$OLD_MINICONDA_VER" != "$MINICONDA_VER" ]]
 then
     echo "installing Miniconda version: $MINICONDA_VER"
+    rm $HOME/.condarc
     curl -O https://repo.continuum.io/miniconda/Miniconda3-$MINICONDA_VER-$OS-x86_64.sh
     bash Miniconda3-$MINICONDA_VER-$OS-x86_64.sh -b -p `pwd`/.miniconda
     echo $MINICONDA_VER > .miniconda/version.txt
