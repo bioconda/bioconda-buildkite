@@ -27,7 +27,7 @@ done
 
 ####### Setup conda ##############
 
-OLD_MINICONDA_VER=$(`cat .miniconda/version.txt 2> /dev/null` || echo "")
+OLD_MINICONDA_VER=$(cat .miniconda/version.txt 2> /dev/null || echo "")
 
 if [[ "$OLD_MINICONDA_VER" != "$MINICONDA_VER" ]]
 then
