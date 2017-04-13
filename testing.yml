@@ -1,6 +1,8 @@
 steps:
-  - label: Setup conda
-    command: ".buildkite/scripts/setup.sh"
+  - label: Dummy testing
+    command: "echo test"
+    env:
+      BIOCONDA_UTILS_TAG: master
     agents:
       queue: linux64
 
