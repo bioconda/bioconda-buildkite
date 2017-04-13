@@ -13,4 +13,12 @@ else
     RANGE="--git-range master HEAD"
 fi
 
-bioconda-utils build recipes config.yml $RANGE
+
+if [[ $OS = "Linux" ]]
+then
+    DOCKER="--docker"
+else
+    DOCKER=""
+fi
+
+bioconda-utils build recipes config.yml $RANGE $DOCKER

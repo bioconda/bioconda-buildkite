@@ -10,6 +10,7 @@ if [[ $(uname -s) = "Darwin" ]]
 then
     OS=MacOSX
 fi
+export OS
 
 
 ####### bash-only checks #########
