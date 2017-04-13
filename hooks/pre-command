@@ -1,3 +1,9 @@
 #!/bin/bash
 
+if [[ -z ${MINICONDA_VER+x} ]]
+then
+    # exit if MINICONDA_VER is not set aka we are not in the pipeline yet.
+    exit 0
+fi
+
 .buildkite/scripts/setup.sh
