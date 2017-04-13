@@ -2,8 +2,8 @@ steps:
   - label: Dummy testing
     command: "echo test"
     env:
-      BIOCONDA_UTILS_TAG: master
-      MINICONDA_VER: 4.2.12  # the last one with Python 3.5
+      BIOCONDA_UTILS_TAG: "master"
+      MINICONDA_VER: "4.2.12"  # the last one with Python 3.5
     agents:
       queue: linux64
 
