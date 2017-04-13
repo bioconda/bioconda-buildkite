@@ -24,7 +24,7 @@ done
 ####### Setup conda ##############
 
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-$OS-x86_64.sh
-sudo bash Miniconda3-latest-$tag-x86_64.sh -b -p `pwd`/.miniconda
+bash Miniconda3-latest-$tag-x86_64.sh -b -p `pwd`/.miniconda
 export PATH=.miniconda/bin:$PATH
 
 ./simulate-travis.py --set-channel-order
