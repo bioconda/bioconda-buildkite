@@ -36,4 +36,4 @@ fi
 set -x
 bioconda-utils build recipes config.yml $RANGE $DOCKER $MULLED
 set +x
-conda clean --all
+conda clean --all --yes
