@@ -44,5 +44,5 @@ rm -f $HOME/.condarc
 ./simulate-travis.py --set-channel-order
 ./simulate-travis.py --install-requirements
 
-#conda index .miniconda/conda-bld/linux-64 .miniconda/conda-bld/osx-64
+conda index .miniconda/conda-bld/linux-64 .miniconda/conda-bld/osx-64
 #conda config --add channels file:/$(readlink -e .miniconda/conda-bld)
