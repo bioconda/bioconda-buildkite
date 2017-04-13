@@ -1,6 +1,6 @@
 steps:
   - label: Setup conda
-    command: "scripts/setup.sh"
+    command: ".buildkite/scripts/setup.sh"
     agents:
       queue: linux64
 
