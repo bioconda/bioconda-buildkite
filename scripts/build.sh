@@ -6,11 +6,20 @@ IFS=$'\n\t'
 
 ####### run tests ################
 
-if [[ $(./buildkite/scripts/env_matrix_update.sh) = "true" ]] || [[ $BUILDKITE_BRANCH = "master" ]]
+MULLED="--mulled-test"
+
+if [[ $(./buildkite/scripts/env_matrix_update.sh) = "true" ]]
 then
     RANGE=""
 else
     RANGE="--git-range master HEAD"
+fi
+
+
+if [[ $BUILDKITE_BRANCH = "master" ]]
+then
+    RANGE=""
+    MULLED=""
 fi
 
 
@@ -21,4 +30,4 @@ else
     DOCKER=""
 fi
 
-bioconda-utils build recipes config.yml $RANGE $DOCKER
+bioconda-utils build recipes config.yml $RANGE $DOCKER $MULLED
