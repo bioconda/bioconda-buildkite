@@ -36,4 +36,6 @@ fi
 set -x
 bioconda-utils build recipes config.yml $RANGE $DOCKER $MULLED
 set +x
-conda clean --all --yes
+
+########## cleanup ################
+.buildkite/scripts/cleanup.sh

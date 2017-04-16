@@ -14,3 +14,6 @@ then
 fi
 
 bioconda-utils lint recipes config.yml --git-range master HEAD
+
+########## cleanup ###############
+.buildkite/scripts/cleanup.sh
