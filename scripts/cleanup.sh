@@ -11,4 +11,8 @@ conda clean --all --yes
 # delete stopped containers
 docker container prune -f
 # delete images older than a week
-docker rmi $(docker images | grep " [months|weeks|years]* ago" | awk '{print $3}')
+IMAGES=$(docker images | grep " [months|weeks|years]* ago" | awk '{print $3}')
+if [[ "$IMAGES" != "" ]]
+then
+    docker rmi $IMAGES
+fi
