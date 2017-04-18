@@ -47,3 +47,5 @@ rm -f $HOME/.condarc
 ./simulate-travis.py --install-requirements
 
 conda index $MINICONDA_PATH/conda-bld/linux-64 $MINICONDA_PATH/conda-bld/osx-64
+
+.buildkite/scripts/cleanup.sh
