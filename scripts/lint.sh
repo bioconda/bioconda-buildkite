@@ -13,4 +13,4 @@ then
     exit 0
 fi
 
-bioconda-utils lint recipes config.yml --git-range master HEAD --push-comments --pull-request $BUILDKITE_PULL_REQUEST
+bioconda-utils lint recipes config.yml --git-range master HEAD --push-comment --pull-request $BUILDKITE_PULL_REQUEST
