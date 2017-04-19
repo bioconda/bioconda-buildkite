@@ -2,7 +2,6 @@
 
 ####### activate strict mode #####
 set -euo pipefail
-IFS=$'\n\t'
 
 
 ####### lint recipes #############
@@ -20,6 +19,4 @@ else
     COMMENT="--push-comment --pull-request $BUILDKITE_PULL_REQUEST"
 fi
 
-set -x
 bioconda-utils lint recipes config.yml $COMMENT --git-range master HEAD
-set +x
