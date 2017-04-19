@@ -42,8 +42,15 @@ then
 fi
 export PATH=$MINICONDA_PATH/bin:$PATH
 
+# wipe previous config
 rm -f $HOME/.condarc
-./simulate-travis.py --set-channel-order
-./simulate-travis.py --install-requirements
 
+# set channel order
+./simulate-travis.py --set-channel-order
+
+# install requirements
+conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
+pip install --upgrade git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
+
+# use conda-bld directories as index
 conda index $MINICONDA_PATH/conda-bld/linux-64 $MINICONDA_PATH/conda-bld/osx-64
