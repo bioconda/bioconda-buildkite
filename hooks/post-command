@@ -3,8 +3,7 @@
 if [[ -z ${MINICONDA_VER+x} ]]
 then
     # do nothing if MINICONDA_VER is not set aka we are not in the pipeline yet.
-    echo "skipping setup"
+    echo "skipping cleanup"
 else
-    source .buildkite/scripts/setup.sh
     .buildkite/scripts/cleanup.sh
 fi
