@@ -15,11 +15,11 @@ fi
 
 if [[ "$BUILDKITE_PULL_REQUEST" = "false" ]]
 then
-    PUSH=""
-    PR=""
+    COMMENT=""
 else
-    PUSH="--push-comment"
-    PR="--pull-request $BUILDKITE_PULL_REQUEST"
+    COMMENT="--push-comment --pull-request $BUILDKITE_PULL_REQUEST"
 fi
 
-bioconda-utils lint recipes config.yml $PR $PUSH --git-range master HEAD
+set -x
+bioconda-utils lint recipes config.yml $COMMENT --git-range master HEAD
+set +x
