@@ -13,4 +13,11 @@ then
     exit 0
 fi
 
-bioconda-utils lint recipes config.yml --git-range master HEAD --push-comment --pull-request $BUILDKITE_PULL_REQUEST
+if [[ "$BUILDKITE_PULL_REQUEST" = "false" ]]
+then
+    COMMENT=""
+else
+    COMMENT="--push-comment --pull-request $BUILDKITE_PULL_REQUEST"
+fi
+
+bioconda-utils lint recipes config.yml --git-range master HEAD $COMMENT
