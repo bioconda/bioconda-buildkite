@@ -20,4 +20,4 @@ else
     COMMENT="--push-comment --pull-request $BUILDKITE_PULL_REQUEST"
 fi
 
-bioconda-utils lint recipes config.yml --git-range master HEAD $COMMENT
+bioconda-utils lint recipes config.yml $COMMENT --git-range master HEAD
