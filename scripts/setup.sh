@@ -51,6 +51,7 @@ rm -f $HOME/.condarc
 # install requirements
 conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
 pip uninstall -y bioconda-utils
+pip uninstall -y bioconda-utils
 #pip install --upgrade --force-reinstall --no-deps git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
 # use conda-bld directories as index
