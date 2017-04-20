@@ -1,8 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-
-echo "available space"
+####### show disk usage ##########
 df -h
 
 
