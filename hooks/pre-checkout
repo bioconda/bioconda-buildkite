@@ -1,0 +1,4 @@
+#!/bin/bash
+
+####### remove mulled output #####
+rm -rf build
