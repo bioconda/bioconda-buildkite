@@ -1,6 +1,4 @@
 #!/bin/bash
-
-####### activate strict mode #####
 set -euo pipefail
 
 
