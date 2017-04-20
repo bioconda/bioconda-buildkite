@@ -2,6 +2,10 @@
 set -euo pipefail
 
 
+echo "available space"
+df -h
+
+
 ####### determine OS #############
 OS=Linux
 if [[ $(uname -s) = "Darwin" ]]
