@@ -7,30 +7,36 @@ set -euo pipefail
 
 if [[ $(.buildkite/scripts/env_matrix_update.sh) = "true" ]]
 then
-    RANGE=""
+    RANGE_ARG=""
 else
-    RANGE="--git-range master HEAD"
+    RANGE_ARG="--git-range master HEAD"
 fi
 
 
 if [[ $OS = "Linux" ]]
 then
-    DOCKER="--docker"
-    MULLED="--mulled-test"
+    DOCKER_ARG="--docker"
+    MULLED_ARG="--mulled-test"
 else
-    DOCKER=""
-    MULLED=""
+    DOCKER_ARG=""
+    MULLED_ARG=""
 fi
 
 
 if [[ $BUILDKITE_BRANCH = "master" ]]
 then
-    RANGE=""
-    MULLED=""
+    RANGE_ARG=""
+    # TODO add upload args.
+    if [[ $OS = "Linux" ]]
+    then
+        UPLOAD_ARG=""
+    else
+        UPLOAD_ARG=""
+    fi
 fi
 
 
 
 set -x
-bioconda-utils build recipes config.yml $RANGE $DOCKER $MULLED
+bioconda-utils build recipes config.yml $RANGE_ARG $DOCKER_ARG $MULLED_ARG $UPLOAD_ARG
 set +x
