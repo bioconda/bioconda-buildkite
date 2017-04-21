@@ -35,7 +35,9 @@ then
     fi
 fi
 
-
+# TODO temporarily deactivate --mulled-test because it creates a "build" directory with root rights.
+# This directory cannot be cleaned up by buildkite-agent!
+MULLED_ARG=""
 
 set -x
 bioconda-utils build recipes config.yml $RANGE_ARG $DOCKER_ARG $MULLED_ARG $UPLOAD_ARG
