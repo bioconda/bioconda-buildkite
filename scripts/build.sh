@@ -33,6 +33,8 @@ then
     else
         UPLOAD_ARG=""
     fi
+else
+    UPLOAD_ARG=""
 fi
 
 # TODO temporarily deactivate --mulled-test because it creates a "build" directory with root rights.
